@@ -16,7 +16,7 @@ function solveForPartOne(inputArray: string[]) {
     const regexPattern = new RegExp(
       /Button A: X\+(\d+), Y\+(\d+)\nButton B: X\+(\d+), Y\+(\d+)\nPrize: X=(\d+), Y=(\d+)/
     );
-    const matches = machineConfig.match(regexPattern);
+    const matches = RegExp(regexPattern).exec(machineConfig);
     if (!matches) {
       throw new Error('Invalid input');
     }
@@ -60,7 +60,7 @@ function solveForPartTwo(inputArray: string[]) {
     const regexPattern = new RegExp(
       /Button A: X\+(\d+), Y\+(\d+)\nButton B: X\+(\d+), Y\+(\d+)\nPrize: X=(\d+), Y=(\d+)/
     );
-    const matches = machineConfig.match(regexPattern);
+    const matches = RegExp(regexPattern).exec(machineConfig);
     if (!matches) {
       throw new Error('Invalid input');
     }
